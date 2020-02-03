@@ -26,8 +26,8 @@ function App(props) {
      <UserContext.Provider value={{ ...props, credentials, setCredentials, user, setUser }} > 
       <Switch>
         <Route exact path="/" component={Landing} />
-        <Route path="/signUp" component={SignUp} />
-        <Route path ="/signIn" component={SignIn} />
+        <Route path="/SignUp" component={SignUp} />
+        <Route path ="/SignIn" component={SignIn} />
       </Switch>
       </UserContext.Provider>
     </div>

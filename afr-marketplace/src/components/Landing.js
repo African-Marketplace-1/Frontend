@@ -20,12 +20,12 @@ const Landing = (props) => {
 
     const toSignIn = () => {
         console.log("To Login Component...")
-        props.history.push('/signIn')
+        props.history.push('/SignIn')
     }
 
     const toSignUp = () => {
         console.log("To Sign Up Component...")
-        props.history.push('/signUp')
+        props.history.push('/SignUp')
     }
 
     return (

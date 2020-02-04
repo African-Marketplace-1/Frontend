@@ -10,6 +10,7 @@ import Navigation from './components/Navigation.js';
 import SignIn from './components/SignIn.js';
 import SignUp from './components/SignUp.js';
 import Dashboard from './components/Dashboard.js';
+import NewItem from './components/NewItemForm.js';
 
 import './App.css';
 

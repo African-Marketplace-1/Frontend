@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 // contexts
 import { UserContext } from '../contexts/UserContext.js';
 
@@ -7,7 +7,8 @@ import axios from 'axios';
 
 
 const SignUp = (props) => {
-    const {credentials, setCredentials} = useContext(UserContext)
+    const {credentials, setCredentials} = useContext(UserContext);
+    const [canSubmit, setCanSubmit] = useState(true);
 
     const handleChange = (event) => {
         setCredentials({
@@ -17,8 +18,11 @@ const SignUp = (props) => {
     }
 
     const signUp = (event) => {
-        event.preventDefault()
-        axios.post('https://african-marketplace-2020.herokuapp.com/api/auth/register', credentials)
+        event.preventDefault();
+        if (credentials.username.length === 0 || credentials.password.length === 0) {
+            setCanSubmit(false);
+        } else {
+            axios.post('https://african-marketplace-2020.herokuapp.com/api/auth/register', credentials)
             .then((response) => {
                 console.log("This is the response from signUp:", response)
                 props.history.push('/SignIn')
@@ -26,15 +30,15 @@ const SignUp = (props) => {
             .catch((error) => {
                 console.log("This is an error from signUp:", error.message)
             })
-
-            
+        }
     }
     
     return (
         <div className='container'>
             <h1 className='title'>Welcome to Sauti Africa!</h1>
+            <p className='error'>{canSubmit ? null : "You need a username and a password."}</p>
             <div className='sign-in-card'>   
-                <form>
+                <form onSubmit={signUp}>
                     <label type="text" className='form-label'>
                         Username
                     </label>

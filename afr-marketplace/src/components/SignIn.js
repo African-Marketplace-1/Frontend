@@ -6,19 +6,24 @@ import { UserContext } from '../contexts/UserContext.js';
 
 
 const SignIn = (props) => {
-    
 
-    const { credentials, setCredentials  } = useContext(UserContext)
+    const { credentials, setCredentials  } = useContext(UserContext);
+    const [canSubmit, setCanSubmit] = useState(true);
 
     const signin = event => {
         event.preventDefault();
-        axiosWithAuth().post("https://african-marketplace-2020.herokuapp.com/api/auth/login", credentials)
-        .then(response => {
-            console.log(response.data)
-            localStorage.setItem('token', response.data.token);
-            localStorage.setitem('isSignedIn', 'true' )
-            props.history.push('/Dashboard');
-        })
+        if (credentials.username.length === 0 || credentials.password.length === 0) {
+            setCanSubmit(false);
+        } else {
+            setCanSubmit(true);
+            axiosWithAuth().post("https://african-marketplace-2020.herokuapp.com/api/auth/login", credentials)
+            .then(response => {
+                console.log(response.data)
+                localStorage.setItem('token', response.data.token);
+                localStorage.setItem('isSignedIn', 'true' );
+                props.history.push('/Dashboard');
+            })
+        }
     }
 
     const handleChange = event => {
@@ -33,6 +38,7 @@ const SignIn = (props) => {
     return (
         <div className='container'>
             <h1 className='title'>Welcome back to Sauti Africa!</h1>
+            <p className='error'>{canSubmit ? null : "You need a username and a password."}</p>
             <div className='sign-in-card'>   
                 <form onSubmit={signin}>
                     <label className='form-label'>Username</label>

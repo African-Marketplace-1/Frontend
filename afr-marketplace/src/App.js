@@ -19,12 +19,13 @@ function App(props) {
     username: '',
     password: ''
   })
+  const [isSignedIn, setIsSignedIn] = useState(false)
 
 
 
   return (
     <div className="App">
-     <UserContext.Provider value={{ ...props, credentials, setCredentials }} > 
+     <UserContext.Provider value={{ ...props, credentials, setCredentials, isSignedIn, setIsSignedIn }} > 
       <Switch>
         <Route exact path="/" component={Landing} />
         <Route path="/SignUp" component={SignUp} />

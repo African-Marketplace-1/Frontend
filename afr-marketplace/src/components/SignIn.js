@@ -1,11 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import './styles/SignIn.css';
 import { axiosWithAuth } from '../utils/AxiosWithAuth';
+// context
+import { UserContext } from '../contexts/UserContext.js';
 
 
 const SignIn = (props) => {
     
-    const [credentials, setCredentials] = useState({});
+
+    const { credentials, setCredentials } = useContext(UserContext)
 
     const signin = event => {
         event.preventDefault();

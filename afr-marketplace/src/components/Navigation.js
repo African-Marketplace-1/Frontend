@@ -1,23 +1,23 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 // context
-import { UserContext } from '../contexts/UserContext.js';
+
 
 import './styles/nav.css';
 
 const Navigation = (props) => {
-  const [isSignedIn, setIsSignedIn] = useState({
-    isSignedIn: ''
-  })
+  // const [isSignedIn, setIsSignedIn] = useState({
+  //   isSignedIn: ''
+  // })
 
-  useEffect(() => {
-    const status = localStorage.getItem('isSignedIn')
-    if (status) {
-      setIsSignedIn({
-        isSignedIn: status
-      })
-    }
-  })
+  // useEffect(() => {
+  //   const status = localStorage.getItem('isSignedIn')
+  //   if (status) {
+  //     setIsSignedIn({
+  //       isSignedIn: status
+  //     })
+  //   }
+  // },[])
 
 
 
@@ -25,7 +25,6 @@ const Navigation = (props) => {
 
   const signOut = (event) => {
     event.preventDefault()
-    // setIsSignedIn({isSignedIn: false})
     localStorage.clear()
     history.push('/')
   }
@@ -43,7 +42,7 @@ const Navigation = (props) => {
             </div>
         </div>
 
-        { isSignedIn.isSignedIn === 'true' ?
+        { !localStorage.getItem('isSignedIn')  ?
         <div className="navLinks">
         <div>
           <Link to='/SignIn'>Sign In</Link>

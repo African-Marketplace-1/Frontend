@@ -25,7 +25,6 @@ function App(props) {
 
   return (
     <div className="App">
-    {/*
      <UserContext.Provider value={{ ...props, credentials, setCredentials }} > 
       <Switch>
         <Route exact path="/" component={Landing} />
@@ -34,8 +33,6 @@ function App(props) {
         <PrivateRoute path="/Dashboard" component={Dashboard} />
       </Switch>
       </UserContext.Provider>
-      */}
-    <SignIn />
     </div>
   );
 }

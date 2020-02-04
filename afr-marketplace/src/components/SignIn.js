@@ -16,7 +16,7 @@ const SignIn = (props) => {
         .then(response => {
             console.log(response.data)
             localStorage.setItem('token', response.data.token);
-            localStorage.setitem('isSignedIn', 'true' )
+            localStorage.setItem('isSignedIn', 'true' )
             props.history.push('/Dashboard');
         })
     }

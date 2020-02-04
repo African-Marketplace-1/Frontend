@@ -14,3 +14,8 @@
     height: 20rem;
     resize: none;
 }
+
+.error {
+    color: red;
+    font-size: 1.6rem;
+}

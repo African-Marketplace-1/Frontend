@@ -9,6 +9,7 @@ import Landing from './components/Landing.js';
 import Navigation from './components/Navigation.js';
 import SignIn from './components/SignIn.js';
 import SignUp from './components/SignUp.js';
+import Dashboard from './components/Dashboard.js';
 
 import './App.css';
 
@@ -19,15 +20,16 @@ function App(props) {
     password: ''
   })
 
-  // const [user, setUser]
+
 
   return (
     <div className="App">
-     <UserContext.Provider value={{ ...props, credentials, setCredentials, }} > 
+     <UserContext.Provider value={{ ...props, credentials, setCredentials }} > 
       <Switch>
         <Route exact path="/" component={Landing} />
-        <Route path="/signUp" component={SignUp} />
-        <Route path ="/signIn" component={SignIn} />
+        <Route path="/SignUp" component={SignUp} />
+        <Route path ="/SignIn" component={SignIn} />
+        <PrivateRoute path="/Dashboard" component={Dashboard} />
       </Switch>
       </UserContext.Provider>
     </div>

@@ -1,25 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-// context
+
 
 
 import './styles/nav.css';
 
 const Navigation = (props) => {
-  // const [isSignedIn, setIsSignedIn] = useState({
-  //   isSignedIn: ''
-  // })
-
-  // useEffect(() => {
-  //   const status = localStorage.getItem('isSignedIn')
-  //   if (status) {
-  //     setIsSignedIn({
-  //       isSignedIn: status
-  //     })
-  //   }
-  // },[])
-
-
 
   let history = useHistory()
 

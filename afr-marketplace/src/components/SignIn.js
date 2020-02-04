@@ -13,7 +13,7 @@ const SignIn = (props) => {
         .then(response => {
             console.log(response.data)
             localStorage.setItem('token', response.data.token);
-            props.history.push('/');
+            props.history.push('/Dashboard');
         })
     }
 

@@ -60,7 +60,7 @@ const NewItem = (props) => {
                     <option>Greens</option>
                     <option>Smokables</option>
                 </select>
-                <button className='submit'>Submit</button>
+                <button>Submit</button>
             </form>
         </div>
     )

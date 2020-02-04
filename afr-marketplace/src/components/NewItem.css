@@ -1,0 +1,16 @@
+.title {
+    font-size: 3rem;
+}
+
+.entry {
+    display: block;
+    width: 80%;
+    min-width: 550px;
+    margin: 2% auto;
+    box-sizing: border-box;
+}
+
+.description {
+    height: 20rem;
+    resize: none;
+}

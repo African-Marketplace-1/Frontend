@@ -10,6 +10,7 @@ import Navigation from './components/Navigation.js';
 import SignIn from './components/SignIn.js';
 import SignUp from './components/SignUp.js';
 import Dashboard from './components/Dashboard.js';
+import NewItem from './components/NewItemForm.js';
 
 import './App.css';
 
@@ -24,6 +25,7 @@ function App(props) {
 
   return (
     <div className="App">
+    {/*
      <UserContext.Provider value={{ ...props, credentials, setCredentials }} > 
       <Switch>
         <Route exact path="/" component={Landing} />
@@ -32,6 +34,8 @@ function App(props) {
         <PrivateRoute path="/Dashboard" component={Dashboard} />
       </Switch>
       </UserContext.Provider>
+      */}
+    <NewItem />
     </div>
   );
 }

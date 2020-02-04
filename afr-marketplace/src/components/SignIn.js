@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import './styles/SignIn.css';
 import { axiosWithAuth } from '../utils/AxiosWithAuth';
+// context
+import { UserContext } from '../contexts/UserContext.js';
 
 
 const SignIn = (props) => {
-    
-    const [credentials, setCredentials] = useState({username: '', password: ''});
+
+    const { credentials, setCredentials  } = useContext(UserContext);
     const [canSubmit, setCanSubmit] = useState(true);
 
     const signin = event => {
@@ -18,6 +20,7 @@ const SignIn = (props) => {
             .then(response => {
                 console.log(response.data)
                 localStorage.setItem('token', response.data.token);
+                localStorage.setItem('isSignedIn', 'true' );
                 props.history.push('/Dashboard');
             })
         }

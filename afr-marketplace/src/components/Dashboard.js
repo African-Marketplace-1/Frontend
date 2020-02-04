@@ -3,9 +3,14 @@ import React, { useState, useEffect, useContext } from 'react';
 import { axiosWithAuth } from '../utils/AxiosWithAuth.js';
 // Context
 import { UserContext } from '../contexts/UserContext.js';
+// styles
+import './styles/Dashboard.css';
+// components
+import Navigation from './Navigation.js';
 
 const Dashboard = (props) => {
     const [items, setItems] = useState([])
+
 
     useEffect(() => {
         axiosWithAuth().get('api/prices')
@@ -18,13 +23,16 @@ const Dashboard = (props) => {
             })
     }, [])
 
-    return (
 
+
+    return (
         <div>
+            <Navigation />
+            <div className="item-container">
             {
                 items.map((item) => {
                     return (
-                        <div key={item.id}>
+                        <div className="item" key={item.id}>
                             <h1>{item.product}</h1>
                             <h3>${item.avg_price}</h3>
                             <h6>{item.product_cat}</h6>
@@ -32,6 +40,7 @@ const Dashboard = (props) => {
                     )
                 })
             }
+            </div>
         </div>
     )
 }

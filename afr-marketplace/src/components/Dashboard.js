@@ -7,6 +7,7 @@ import { UserContext } from '../contexts/UserContext.js';
 import './styles/Dashboard.css';
 // components
 import Navigation from './Navigation.js';
+import NewItemForm from './NewItemForm.js';
 
 const Dashboard = (props) => {
     const [items, setItems] = useState([])
@@ -28,19 +29,24 @@ const Dashboard = (props) => {
     return (
         <div>
             <Navigation />
+        <div className="content">
             <div className="item-container">
             {
                 items.map((item) => {
                     return (
                         <div className="item" key={item.id}>
-                            <h1>{item.product}</h1>
-                            <h3>${item.avg_price}</h3>
-                            <h6>{item.product_cat}</h6>
+                            <h1 className="product-name">{item.product}</h1>
+                            <h3 className="product-price">${item.avg_price}</h3>
+                            <h6 className="product-category">{item.product_cat}</h6>
                         </div>
                     )
                 })
             }
             </div>
+            <div className="form-container">
+                <NewItemForm />
+            </div>
+        </div>
         </div>
     )
 }

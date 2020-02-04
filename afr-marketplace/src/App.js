@@ -5,7 +5,7 @@ import { UserContext } from './contexts/UserContext.js';
 // Private Route
 import PrivateRoute from './utils/PrivateRoute.js';
 // components
-import Landings from './components/Landing.js';
+import Landing from './components/Landing.js';
 import Navigation from './components/Navigation.js';
 import SignIn from './components/SignIn.js';
 import SignUp from './components/SignUp.js';
@@ -19,11 +19,11 @@ function App(props) {
     password: ''
   })
 
-  const [user, setUser]
+  // const [user, setUser]
 
   return (
     <div className="App">
-     <UserContext.Provider value={{ ...props, credentials, setCredentials, user, setUser }} > 
+     <UserContext.Provider value={{ ...props, credentials, setCredentials, }} > 
       <Switch>
         <Route exact path="/" component={Landing} />
         <Route path="/signUp" component={SignUp} />

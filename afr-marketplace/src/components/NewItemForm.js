@@ -1,63 +1,95 @@
 import React, {useState} from 'react';
-import { Link } from 'react-router-dom';
-
+import { useHistory } from 'react-router-dom';
 import './NewItem.css'
-import { axiosWithAuth } from '../utils/AxiosWithAuth';
-import Axios from 'axios';
+import axios from 'axios';
 
 
 
-const NewItem = (props) => {
-    cosnt [NewListings, setListings] =useState({});
+// const NewItem = (props) => {
+    
+//     let [name, setName] = useState('');
+//     let [description, setDescription] = useState('');
+//     let [price, setPrice] = useState('');
+//     let [canPass, setCanPass] = useState(true);
+//     const handleSubmit = (event) => {
+//         event.preventDefault();
+//         if (name.length === 0 || description.length === 0) {
+//             setCanPass(false);
+//             return false;
+//         }
+//         else if (!price) {
+//             setCanPass(false);
+//             return false;
+//         }
+//         else if (isNaN(price)) {
+//             setCanPass(false);
+//             return false;
+//         }
+//         //submit
+//         setCanPass(true);
+//         return true;
+//     };
 
+const SubmitListings = () => {
+    const [listings, setListings] =useState({});
+
+        let history = useHistory()
+    
     const submiListings = event => {
         event.preventDefault();
         console.log(listings);
         axios.post("https://african-marketplace-2020.herokuapp.com/api/listings", listings)
-        .then(response =>)
+        .then(response => {
+            console.log(response.data)
+            history.push('/Dashboard')
+        })
     }
 
-
-
-    let [name, setName] = useState('');
-    let [description, setDescription] = useState('');
-    let [price, setPrice] = useState('');
-    let [canPass, setCanPass] = useState(true);
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        if (name.length === 0 || description.length === 0) {
-            setCanPass(false);
-            return false;
-        }
-        else if (!price) {
-            setCanPass(false);
-            return false;
-        }
-        else if (isNaN(price)) {
-            setCanPass(false);
-            return false;
-        }
-        //submit
-        setCanPass(true);
-        return true;
-    };
+    const handleChange = event => {
+        setListings({
+            ...listings,
+            [event.target.name]: event.target.value
+        })
+        console.log(listings);
+    }
 
 
     return (
         <div>
             <h1 className='title'>Add an Item</h1>
-            <p className='error'>{canPass ? null : "You need a name and a description, and the price must be a number."}</p>
-            <form onSubmit={(event) => handleSubmit(event)}>
-                <select className='entry'>
+            {/* <p className='error'>{canPass ? null : "You need a name and a description, and the price must be a number."}</p> */}
+            <form onSubmit={submiListings}>
+                <select className='entry'
+                        label="location"
+                        type='text' 
+                        placeholder='Location' 
+                        className='entry' 
+                        onChange={handleChange}
+                >
                     <option>Somalia</option>
                     <option>Ethiopia</option>
                     <option>Kenya</option>
                     <option>Uganda</option>
                     <option>Tanzania</option>
                 </select>
-                <input type='text' placeholder='Item Name' className='entry' value={name} onChange={(event) => setName(event.target.value)}/>
-                <textarea  className='entry description' placeholder='Type in a description.' value={description} onChange={(event) => setDescription(event.target.value)}></textarea>
-                <input type='text' placeholder='Price' className='entry' value={price} onChange={(event) => setPrice(event.target.value)}/>
+                <input 
+                    label="item"
+                    type='text' 
+                    placeholder='Item Name' 
+                    className='entry' 
+                    onChange={handleChange}/>
+                <textarea
+                    label="description"  
+                    className='entry description' 
+                    placeholder='Type in a description.' 
+                    onChange={handleChange}>
+                </textarea>
+                <input 
+                    label="price"
+                    type='text' 
+                    placeholder='Price' 
+                    className='entry' 
+                    onChange={handleChange}/>
                 <select className='entry'>
                     <option>Animal Products</option>
                     <option>Dry Goods</option>
@@ -84,4 +116,4 @@ const NewItem = (props) => {
     )
 };
 
-export default NewItem;
+export default SubmitListings;

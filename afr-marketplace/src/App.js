@@ -19,7 +19,9 @@ function App(props) {
     username: '',
     password: ''
   })
-  const [isSignedIn, setIsSignedIn] = useState(false)
+  const [isSignedIn, setIsSignedIn] = useState({
+    isSignedIn: false
+  })
 
 
 

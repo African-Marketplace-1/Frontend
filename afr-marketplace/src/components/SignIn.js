@@ -8,7 +8,7 @@ import { UserContext } from '../contexts/UserContext.js';
 const SignIn = (props) => {
     
 
-    const { credentials, setCredentials } = useContext(UserContext)
+    const { credentials, setCredentials, setIsSignedIn  } = useContext(UserContext)
 
     const signin = event => {
         event.preventDefault();
@@ -16,6 +16,7 @@ const SignIn = (props) => {
         .then(response => {
             console.log(response.data)
             localStorage.setItem('token', response.data.token);
+            setIsSignedIn({isSignedIn: true})
             props.history.push('/Dashboard');
         })
     }

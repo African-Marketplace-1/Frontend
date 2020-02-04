@@ -4,6 +4,8 @@ import React, { useState, useEffect, useContext } from 'react';
 import UserContext from '../contexts/UserContext.js';
 // axios
 import axios from 'axios'
+// Components
+import Navigation from './Navigation.js';
 
 const Landing = (props) => {
     const [listings, setListings] = useState()
@@ -29,6 +31,8 @@ const Landing = (props) => {
     }
 
     return (
+    <div>
+        <Navigation />
         <div className="landing-container">
             <h1>Welcome to The Official Marketplace of Sauti Africa</h1>
             <div>
@@ -42,6 +46,7 @@ const Landing = (props) => {
 
 
         </div>
+    </div>
     )
 
 }

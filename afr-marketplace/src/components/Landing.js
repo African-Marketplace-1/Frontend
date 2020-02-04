@@ -9,7 +9,7 @@ const Landing = (props) => {
     const [listings, setListings] = useState()
 
     useEffect(() => {
-        axios.get('url')
+        axios.get('https://african-marketplace-2020.herokuapp.com/api/prices')
             .then((response) => {
                 console.log("This is the response from landing page:", response)
             })
@@ -45,3 +45,5 @@ const Landing = (props) => {
     )
 
 }
+
+export default Landing

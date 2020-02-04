@@ -10,7 +10,7 @@ import Navigation from './Navigation.js';
 
 const Dashboard = (props) => {
     const [items, setItems] = useState([])
-    const { isSignedIn, setIsSignedIn } = useContext(UserContext)
+
 
     useEffect(() => {
         axiosWithAuth().get('api/prices')
@@ -23,9 +23,7 @@ const Dashboard = (props) => {
             })
     }, [])
 
-    useEffect(() => {
-        console.log("THIS IS A DASHBOARD RENDER and isSignedIn is set to:", isSignedIn)
-    }, [])
+
 
     return (
         <div>

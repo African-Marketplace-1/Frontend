@@ -1,19 +1,34 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 // context
 import { UserContext } from '../contexts/UserContext.js';
 
 const Navigation = (props) => {
-  const { isSignedIn, setIsSignedIn } = useContext(UserContext)
+  const [isSignedIn, setIsSignedIn] = useState({
+    isSignedIn: ''
+  })
+
+  useEffect(() => {
+    const status = localStorage.getItem('isSignedIn')
+    if (status) {
+      setIsSignedIn({
+        isSignedIn: status
+      })
+    }
+  })
+
+
 
   let history = useHistory()
 
   const signOut = (event) => {
     event.preventDefault()
-    setIsSignedIn({isSignedIn: false})
+    // setIsSignedIn({isSignedIn: false})
     localStorage.clear()
     history.push('/')
   }
+
+
 
   return (
     <div>
@@ -26,7 +41,7 @@ const Navigation = (props) => {
           <a herf="">About</a>
         </div>
 
-        { !isSignedIn ?
+        { isSignedIn.isSignedIn === 'true' ?
         <div>
         <div>
           <Link to='/SignIn'>Sign In</Link>

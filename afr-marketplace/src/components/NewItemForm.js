@@ -1,8 +1,24 @@
 import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
+
 import './NewItem.css'
+import { axiosWithAuth } from '../utils/AxiosWithAuth';
+import Axios from 'axios';
+
+
 
 const NewItem = (props) => {
+    cosnt [NewListings, setListings] =useState({});
+
+    const submiListings = event => {
+        event.preventDefault();
+        console.log(listings);
+        axios.post("https://african-marketplace-2020.herokuapp.com/api/listings", listings)
+        .then(response =>)
+    }
+
+
+
     let [name, setName] = useState('');
     let [description, setDescription] = useState('');
     let [price, setPrice] = useState('');
@@ -25,6 +41,8 @@ const NewItem = (props) => {
         setCanPass(true);
         return true;
     };
+
+
     return (
         <div>
             <h1 className='title'>Add an Item</h1>

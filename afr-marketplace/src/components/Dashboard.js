@@ -30,14 +30,18 @@ const Dashboard = (props) => {
         <div>
             <Navigation />
         <div className="content">
-            <div className="item-container">
-            {
-                items.map((item) => {
+            
+            <div className="item-container-dash">
+                
+            {items.map((item) => {
                     return (
-                        <div className="item" key={item.id}>
+                        <div className="item-dash" key={item.id}>
                             <h1 className="product-name">{item.product}</h1>
-                            <h3 className="product-price">${item.avg_price}</h3>
-                            <h6 className="product-category">{item.product_cat}</h6>
+                            <br/>
+                            <h6 className="product-category"><span>Category: </span>{item.product_cat}</h6>
+                            <h6 className="product-subcategory"><span>Sub-category: </span>{item.sub_category}</h6>
+                            <br/>
+                            <h3 className="product-price"><span>Current Price: </span>${item.avg_price}</h3>
                         </div>
                     )
                 })

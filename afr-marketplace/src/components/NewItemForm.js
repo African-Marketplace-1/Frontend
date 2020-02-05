@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import { useHistory } from 'react-router-dom';
-import './styles/NewItem.css'
 import axios from 'axios';
 import { axiosWithAuth } from '../utils/AxiosWithAuth';
 

@@ -26,15 +26,18 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-	line-height: 1;
+    line-height: 1;
+    
 }
 
 .nav {
-    background-color: rgba(1,110,45);
     color: white;
     display: flex;
     justify-content: space-between;
-    height: 80px;
+    height: 140px;
+    background-image: url(./images/flag.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 }
 
 .nav h1 {

@@ -18,7 +18,7 @@ const Navigation = (props) => {
   return (
     <div>
       <div className="nav">
-        <h1>African Marketplace</h1>
+        <h1>Sauti Africa</h1>
         <div className="navLinks">
             <div>
                 <Link to='/'>Home</Link>

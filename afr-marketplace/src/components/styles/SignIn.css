@@ -50,23 +50,32 @@ a {
     text-decoration: none;
 }
 
-.container {
-    width: 50%;
+
+.container .form {
+    width: 100%;
     margin: 0% auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 80vh;
+    
+
 }
 
 .title {
     font-size: 4rem;
     font-weight: bold;
     text-align: center;
+    margin: 8% 0 2%
 }
 
 .sign-in-card {
     background: rgba(128, 128, 128, 0.25);
-    width: 60%;
+    width: 30%;
     box-sizing: border-box;
-    margin: 5% auto 0%;
+    margin: 0% auto 0%;
     padding: 3%;
+    font-family: 'Roboto', sans-serif;
 }
 
 .form-label {
@@ -80,11 +89,11 @@ a {
     margin: 2% auto 5%;
 }
 
-.password {
+/* .password {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
+} */
 
 .forgot-password {
     font-weight: normal;

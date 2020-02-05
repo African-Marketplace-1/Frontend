@@ -21,7 +21,7 @@ const Navigation = (props) => {
         <h1>Sauti Africa</h1>
         <div className="navLinks">
             <div>
-                <Link to='/'>Home</Link>
+                <Link to='/Dashboard'>Home</Link>
             </div>
             <div>
                 <a herf="">About</a>
@@ -36,10 +36,14 @@ const Navigation = (props) => {
         <div>
           <Link to='/SignUp'>Sign Up</Link>
         </div>
-
         </div> :  
-        <div className="signOut">  
-            <Link onClick={signOut} to='/'> Sign Out </Link>
+        <div className="navLinks"> 
+          <div> 
+              <Link to='/UserListings'>My Listings</Link>
+          </div>
+          <div>
+              <Link onClick={signOut} to='/'> Sign Out </Link>
+          </div>
         </div>
         }
 

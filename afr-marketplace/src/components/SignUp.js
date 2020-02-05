@@ -5,6 +5,8 @@ import { UserContext } from '../contexts/UserContext.js';
 import './styles/SignIn.css';
 import axios from 'axios';
 
+import Navigation from './Navigation'
+
 
 const SignUp = (props) => {
     const {credentials, setCredentials} = useContext(UserContext);
@@ -35,6 +37,8 @@ const SignUp = (props) => {
     
     return (
         <div className='container'>
+            <Navigation />
+            <div className='container-form'></div>
             <h1 className='title'>Welcome to Sauti Africa!</h1>
             <p className='error'>{canSubmit ? null : "You need a username and a password."}</p>
             <div className='sign-in-card'>   
@@ -42,14 +46,13 @@ const SignUp = (props) => {
                     <label type="text" className='form-label'>
                         Username
                     </label>
-                    <input name="username" value={credentials.username} onChange={handleChange} type='text' className='form-input'/>
+                    <input name="username" value={credentials.username} onChange={handleChange} type='text' className='form-input' placeholder="Username"/>
                     <div className='password'>
                         <div><label htmlFor='password' className='form-label'>Password:</label></div>
                     </div>
-                    <input name="password" value={credentials.password} onChange={handleChange} type='password' className='form-input'/>
+                    <input name="password" value={credentials.password} onChange={handleChange} type='password' className='form-input' placeholder="Password"/>
                     <button onClick={signUp} className='sign-in'>Sign Up</button>
                 </form>
-                <p className='new-user'>New user? <a href='#'>Create an account.</a></p>
             </div>
         </div>
     )

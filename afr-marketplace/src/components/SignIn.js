@@ -4,6 +4,8 @@ import { axiosWithAuth } from '../utils/AxiosWithAuth';
 // context
 import { UserContext } from '../contexts/UserContext.js';
 
+import Navigation from './Navigation'
+
 
 const SignIn = (props) => {
 
@@ -36,7 +38,10 @@ const SignIn = (props) => {
     }
         
     return (
+        
         <div className='container'>
+            <Navigation />
+            <div className='container-form'>
             <h1 className='title'>Welcome back to Sauti Africa!</h1>
             <p className='error'>{canSubmit ? null : "You need a username and a password."}</p>
             <div className='sign-in-card'>   
@@ -45,7 +50,7 @@ const SignIn = (props) => {
                     <input 
                         label="username"
                         type="text"
-                        placeholder="username" 
+                        placeholder="Username" 
                         className="form-input"
                         name="username"
                         onChange={handleChange}
@@ -54,11 +59,11 @@ const SignIn = (props) => {
                         <div>
                             <label htmlFor='password' className='form-label'>Password</label>
                         </div> 
-                        <div className='forgot-password'><a href='#'>Forgot password?</a></div>
+                        
                     </div>
                     <input
                         label="password"
-                        placeholder="password"
+                        placeholder="Password"
                         type='password' 
                         name="password"
                         className='form-input'
@@ -66,7 +71,8 @@ const SignIn = (props) => {
                     />
                     <button className='sign-in'>Sign in</button>
                 </form>
-                <p className='new-user'>New user? <a href='#'>Create an account.</a></p>
+                <p className='new-user'>New user? <a href='/SignUp'>Create an account.</a></p>
+            </div>
             </div>
         </div>
     )

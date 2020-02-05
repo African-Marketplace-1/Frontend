@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Route, Switch, Link } from 'react-router-dom';
+import { Route, Switch, Link, useParams } from 'react-router-dom';
 // contexts
 import { UserContext } from './contexts/UserContext.js';
 // Private Route
@@ -10,8 +10,9 @@ import Navigation from './components/Navigation.js';
 import SignIn from './components/SignIn.js';
 import SignUp from './components/SignUp.js';
 import Dashboard from './components/Dashboard.js';
-import NewItem from './components/NewItemForm.js';
 import UserListings from './components/UserListings.js';
+import Item from './components/Item.js';
+import UpdateForm from './components/UpdateItem.js';
 
 import './App.css';
 
@@ -21,9 +22,9 @@ function App(props) {
     username: '',
     password: ''
   })
-  // const [isSignedIn, setIsSignedIn] = useState({
-  //   isSignedIn: false
-  // })
+
+  const { id } = useParams()
+
 
 
 
@@ -39,6 +40,8 @@ function App(props) {
         <Route path ="/SignIn" component={SignIn} />
         <PrivateRoute path="/Dashboard" component={Dashboard} />
         <PrivateRoute path="/UserListings" component={UserListings} />
+        <PrivateRoute path="/Item/:id" component={Item} />
+        <PrivateRoute path="/listingEdit/:id" component={UpdateForm} />
       </Switch>
       </UserContext.Provider>
     </div>

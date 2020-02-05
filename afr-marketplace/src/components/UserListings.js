@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 // Contexts
 import { UserContext } from '../contexts/UserContext.js';
 // axiosWithAuth
@@ -26,6 +26,10 @@ const UserListings = () => {
             })
     }, [])
 
+    const goToItem = (id) => {
+        history.push(`/Item/${id}`)
+    }
+
     return (
         <div>
             <Navigation />
@@ -33,7 +37,7 @@ const UserListings = () => {
                 { userListings.length > 0 ?
                     userListings.map((listing) => {
                         return (
-                            <div className="item" key={listing.id} id={listing.id}>
+                            <div onClick={() => goToItem(listing.id)} className="item" key={listing.id} id={listing.id}>
                                 <h1 className="item-name">{listing.item}</h1>
                                 <h3 className="item-location">{listing.location}</h3>
                             </div>

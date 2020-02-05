@@ -56,20 +56,25 @@ const updateItem = () => {
             {
                 !item ?
                 <button className="first-listing" onClick={backToDash}>Add Your First Listing Today</button> :
-                <div>
+                <div className="editContainer">
                     <div className="indv-item-display">
                         <h1 className="indv-prod-name"> {item.item} </h1>
-                        <h2 className="indv-price">  ${item.price} </h2>
+                        <br/>
                         <h4 className="indv-loc"> {item.location} </h4>
+                        
+                        <br/>
+                        <h2 className="indv-price">Curent Price: ${item.price} </h2>
+                        <br/>
                         <div className="indv-desc"> <p> {item.description} </p> </div>
                     </div>
-                    <div className="indv-item-btn-div">
+                    
+                </div>
+            }
+            <div className="indv-item-btn-div">
                         <button onClick={updateItem} className="btn-update">Update</button>
                         <button onClick={deleteItem} className="btn-delete">Delete</button>
                         <button className="btn-back" onClick={backToDash}>Dashboard</button>
                     </div>
-                </div>
-            }
         </div>
     )
 }

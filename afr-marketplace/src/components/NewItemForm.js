@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { useHistory } from 'react-router-dom';
-import './NewItem.css'
+import './styles/NewItem.css'
 import axios from 'axios';
 import { axiosWithAuth } from '../utils/AxiosWithAuth';
 
@@ -63,7 +63,7 @@ const SubmitListings = () => {
 
 
     return (
-        <div>
+        <div className="newItemForm">
             <h1 className='title'>Add an Item</h1>
             {/* <p className='error'>{canPass ? null : "You need a name and a description, and the price must be a number."}</p> */}
             <form onSubmit={submitListings}>

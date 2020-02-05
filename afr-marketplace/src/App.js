@@ -11,6 +11,7 @@ import SignIn from './components/SignIn.js';
 import SignUp from './components/SignUp.js';
 import Dashboard from './components/Dashboard.js';
 import NewItem from './components/NewItemForm.js';
+import UserListings from './components/UserListings.js';
 
 import './App.css';
 
@@ -37,6 +38,7 @@ function App(props) {
         <Route path="/SignUp" component={SignUp} />
         <Route path ="/SignIn" component={SignIn} />
         <PrivateRoute path="/Dashboard" component={Dashboard} />
+        <PrivateRoute path="/UserListings" component={UserListings} />
       </Switch>
       </UserContext.Provider>
     </div>

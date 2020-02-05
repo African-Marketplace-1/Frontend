@@ -49,7 +49,7 @@ const SubmitListings = () => {
         axiosWithAuth().post(`https://african-marketplace-2020.herokuapp.com/api/users/${id}/listings`, listing)
         .then(response => {
             console.log(response.data)
-            history.push('/Dashboard')
+            history.push('/UserListings')
         })
     }
 

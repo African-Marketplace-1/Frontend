@@ -13,6 +13,7 @@ import Dashboard from './components/Dashboard.js';
 import UserListings from './components/UserListings.js';
 import Item from './components/Item.js';
 import UpdateForm from './components/UpdateItem.js';
+import ItemView from './components/ItemView.js';
 
 import './App.css';
 
@@ -36,6 +37,7 @@ function App(props) {
      <UserContext.Provider value={{ ...props, credentials, setCredentials }} > 
       <Switch>
         <Route exact path="/" component={Landing} />
+        <Route path="/view/:id" component={ItemView} />
         <Route path="/SignUp" component={SignUp} />
         <Route path ="/SignIn" component={SignIn} />
         <PrivateRoute path="/Dashboard" component={Dashboard} />

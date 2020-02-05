@@ -11,17 +11,19 @@ import "./styles/Landing.css";
 import undraw from  "./styles/undraw.png"
 
 const Landing = (props) => {
-    // const [listings, setListings] = useState()
+const [listings, setListings] = useState([])
 
-    // useEffect(() => {
-    //     axios.get('https://african-marketplace-2020.herokuapp.com/api/prices')
-    //         .then((response) => {
-    //             console.log("This is the response from landing page:", response)
-    //         })
-    //         .catch((error) => {
-    //             console.log("This is an error from the landing page:", error.message)
-    //         })
-    // }, [])
+
+useEffect(() => {
+    axios.get('https://african-marketplace-2020.herokuapp.com/api/listings')
+        .then((response) => {
+            // console.log("This is the response on the landing page:", response)
+            setListings(response.data)
+        })
+        .catch((error) => {
+            console.log("This is the error from the landing page:", error)
+        })
+},[])
 
     const toSignIn = () => {
         console.log("To Login Component...")
@@ -31,6 +33,10 @@ const Landing = (props) => {
     const toSignUp = () => {
         console.log("To Sign Up Component...")
         props.history.push('/SignUp')
+    }
+
+    const toItemView = (id) => {
+        props.history.push(`/view/${id}`)
     }
 
     return (
@@ -55,6 +61,28 @@ const Landing = (props) => {
                         <img className="image" src={undraw} />
                     </div>
                 </div>
+                <section>
+                    <h1 className="offering-header">Check Out Some Current Offerings</h1>
+                    <div className="offering-div">
+                        {
+                            listings.length > 1 ?
+                            listings.map((item) => {
+                                return (
+                                    <div className="offering-card" key={item.id}>
+                                       <h4 className="offering-seller"> {item.username} is selling... </h4>
+                                       <h2 className="offering-product"> {item.item}! </h2>
+                                       <h5 className="offering-price">Asking: ${item.price} </h5>
+                                       <h5 className="offering-location">Location: {item.location} </h5>
+                                        <button onClick={() => toItemView(item.id)} className="offering-btn">View Listing</button>
+                                    </div>
+                                )
+                            }) :
+                            <div>
+                                There are no current offerings.
+                            </div>
+                        }
+                    </div>
+                </section>
         </div>
 
     </div>

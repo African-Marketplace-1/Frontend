@@ -21,6 +21,7 @@ const SignIn = (props) => {
                 console.log(response.data)
                 localStorage.setItem('token', response.data.token);
                 localStorage.setItem('isSignedIn', 'true' );
+                localStorage.setItem('id', JSON.stringify(response.data.user_id));
                 props.history.push('/Dashboard');
             })
         }
@@ -33,7 +34,6 @@ const SignIn = (props) => {
         })
         console.log(credentials);
     }
-      
         
     return (
         <div className='container'>

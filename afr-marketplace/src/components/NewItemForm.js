@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import { useHistory } from 'react-router-dom';
 import './NewItem.css'
 import axios from 'axios';
+import { axiosWithAuth } from '../utils/AxiosWithAuth';
 
 
 
@@ -31,14 +32,21 @@ import axios from 'axios';
 //     };
 
 const SubmitListings = () => {
-    const [listings, setListings] =useState({});
+    const [listing, setListing] =useState({
+        location: '',
+        item: '',
+        description: '',
+        price: ''
+    });
 
         let history = useHistory()
+        let id = localStorage.getItem('id')
     
-    const submiListings = event => {
+    const submitListings = event => {
         event.preventDefault();
-        console.log(listings);
-        axios.post("https://african-marketplace-2020.herokuapp.com/api/listings", listings)
+        console.log(listing);
+        console.log(id)
+        axiosWithAuth().post(`https://african-marketplace-2020.herokuapp.com/api/user/${id}/listings`, listing)
         .then(response => {
             console.log(response.data)
             history.push('/Dashboard')
@@ -46,11 +54,11 @@ const SubmitListings = () => {
     }
 
     const handleChange = event => {
-        setListings({
-            ...listings,
+        setListing({
+            ...listing,
             [event.target.name]: event.target.value
         })
-        console.log(listings);
+        console.log(listing);
     }
 
 
@@ -58,8 +66,49 @@ const SubmitListings = () => {
         <div>
             <h1 className='title'>Add an Item</h1>
             {/* <p className='error'>{canPass ? null : "You need a name and a description, and the price must be a number."}</p> */}
-            <form onSubmit={submiListings}>
-                <select className='entry'
+            <form onSubmit={submitListings}>
+                <label className="entry">Shop Location:
+                    <input
+                    name="location"
+                    value={listing.location}
+                    onChange={handleChange}
+                    className="entry"
+                    />
+                </label>
+                <label className="entry"> Product Name:
+                    <input
+                    name="item"
+                    value={listing.item}
+                    onChange={handleChange}
+                    className="entry"
+                    />
+                </label>
+                <label className="entry"> Description:
+                    <input
+                    name="description"
+                    value={listing.description}
+                    onChange={handleChange}
+                    className="entry description"
+                    />
+                </label>
+                <label className="entry"> Price:
+                    <input
+                    name="price"
+                    value={listing.price}
+                    onChange={handleChange}
+                    className="entry"
+                    />
+                </label>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    )
+};
+
+export default SubmitListings;
+
+
+                {/* <select className='entry'
                         label="location"
                         type='text' 
                         placeholder='Location' 
@@ -75,6 +124,7 @@ const SubmitListings = () => {
                 <input 
                     label="item"
                     type='text' 
+                    value={listings.item}
                     placeholder='Item Name' 
                     className='entry' 
                     onChange={handleChange}/>
@@ -109,11 +159,4 @@ const SubmitListings = () => {
                     <option>Roots and Tubers</option>
                     <option>Greens</option>
                     <option>Smokables</option>
-                </select>
-                <button>Submit</button>
-            </form>
-        </div>
-    )
-};
-
-export default SubmitListings;
+                </select> */}

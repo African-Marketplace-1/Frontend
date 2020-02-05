@@ -36,8 +36,9 @@ const UpdateForm = () => {
                 setItem({
                     user_id: response.data.user_id,
                     location: response.data.location,
-                    item: response.data.location,
-                    description: response.data.description
+                    item: response.data.item,
+                    description: response.data.description,
+                    price: response.data.price
                 })
             })
             .catch((error) => {

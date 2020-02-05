@@ -79,6 +79,11 @@
     background-color: red;
 }
 
+.hoverbutton:hover {
+    background-color: white;
+    color: black;
+}
+
 .btn-back {
     width: 275px;
     padding: 10px 0;

@@ -10,6 +10,7 @@ import './styles/Item.css';
 import Navigation from './Navigation.js';
 
 const initial = {
+    user_id: '',
     location: '',
     item: '',
     description: '',
@@ -23,17 +24,26 @@ const UpdateForm = () => {
     // console.log("This is history in update form:", history)
     const { id } = useParams()
     const userId = localStorage.getItem('id')
+    console.log("This is the id from useParams (item):", id)
+    console.log("This is userId (user):", userId)
+    console.log("This is the item:", item)
 
     useEffect(() => {
         axiosWithAuth().get(`api/listings/${id}`)
             .then((response) => {
                 console.log("This is the response from the update form:", response)
-                setItem(response.data)
+                // setItem(response.data)
+                setItem({
+                    user_id: response.data.user_id,
+                    location: response.data.location,
+                    item: response.data.location,
+                    description: response.data.description
+                })
             })
             .catch((error) => {
                 console.log("This is the error from the update form:", error.message)
             })
-    }, [id])
+    }, [])
 
     const handleChange = (event) => {
         setItem({
@@ -47,6 +57,8 @@ const UpdateForm = () => {
         axiosWithAuth().put(`/api/users/${userId}/listings/${id}`, item)
             .then((response) => {
                 console.log("This is the put response from update form:", response)
+                setItem(initial)
+                history.push('/UserListings')
                 
             })
             .catch((error) => {
@@ -93,7 +105,7 @@ const UpdateForm = () => {
                         onChange={handleChange}
                         />
                     </label>
-                    <button type='submit' onClick={handleUpdate}>Save Changes</button>
+                    <button type='submit'>Save Changes</button>
                     <button onClick={backToDash}>Dashboard</button>
                 </form>
             </div>

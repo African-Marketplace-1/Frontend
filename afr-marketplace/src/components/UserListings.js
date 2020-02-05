@@ -40,6 +40,10 @@ const UserListings = () => {
                             <div onClick={() => goToItem(listing.id)} className="item" key={listing.id} id={listing.id}>
                                 <h1 className="item-name">{listing.item}</h1>
                                 <h3 className="item-location">{listing.location}</h3>
+                                <br/>
+                                <h3 className="item-price"><span>Price: $</span>{listing.price}</h3>
+                                <br/>
+                                <h4>CLICK TO EDIT</h4>
                             </div>
                         )
                     }) :

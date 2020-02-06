@@ -72,7 +72,7 @@ useEffect(() => {
                         </div>
                     </div>
                     <div className="left">
-                        <img className="image" src={undraw} />
+                        <img className="image" src={undraw} alt="man standing by buisness"/>
                     </div>
                 </div>
                 <section>

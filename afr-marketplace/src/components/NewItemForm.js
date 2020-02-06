@@ -83,7 +83,7 @@ const SubmitListings = () => {
                     />
                 </label>
                 <label className="entry"> Description:
-                    <input
+                    <textarea
                     name="description"
                     value={listing.description}
                     onChange={handleChange}

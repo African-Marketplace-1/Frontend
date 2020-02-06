@@ -98,7 +98,7 @@ const UpdateForm = () => {
                     </div>
                     <div className="box">
                         <label className="label"> Description: </label>
-                            <input
+                            <textarea
                             className="entry description"
                             name="description"
                             value={item.description || ''}

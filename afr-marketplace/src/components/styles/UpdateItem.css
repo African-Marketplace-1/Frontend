@@ -97,3 +97,9 @@ a {
 .buttons {
     border: none;
 }
+
+textarea {
+    font-family: 'Roboto', sans-serif;
+    
+}
+

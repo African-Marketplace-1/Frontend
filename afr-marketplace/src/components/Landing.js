@@ -11,19 +11,24 @@ import "./styles/Landing.css";
 import undraw from  "./styles/undraw.png"
 
 const Landing = (props) => {
+    const [searchTerm, setSearchTerm] = useState("")
 const [listings, setListings] = useState([])
 
 
 useEffect(() => {
     axios.get('https://african-marketplace-2020.herokuapp.com/api/listings')
         .then((response) => {
-            // console.log("This is the response on the landing page:", response)
-            setListings(response.data)
+            console.log("This is the response on the landing page:", response)
+            let data = response.data
+            let results = data.filter(product => 
+                product.item.toLowerCase().includes(searchTerm.toLowerCase())
+                )
+            setListings(results)
         })
         .catch((error) => {
             console.log("This is the error from the landing page:", error)
         })
-},[])
+},[searchTerm])
 
     const toSignIn = () => {
         console.log("To Login Component...")
@@ -37,6 +42,10 @@ useEffect(() => {
 
     const toItemView = (id) => {
         props.history.push(`/view/${id}`)
+    }
+
+    const handleChange = (event) => {
+        setSearchTerm(event.target.value)
     }
 
     return (
@@ -63,9 +72,12 @@ useEffect(() => {
                 </div>
                 <section>
                     <h1 className="offering-header">Check Out Some Current Offerings</h1>
+                    <form>
+                    <label className="search-bar">Search: <input placeholder="Search for a product or user" value={searchTerm} onChange={handleChange} /> </label>
+                    </form>
                     <div className="offering-div">
                         {
-                            listings.length > 1 ?
+                            listings.length > 0 ?
                             listings.map((item) => {
                                 return (
                                     <div className="offering-card" key={item.id}>

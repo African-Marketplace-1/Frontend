@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Architects+Daughter|Roboto&display=swap');
 
 /* .landing-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: baseline;
+background-image: url('./images/background-image.jpg');
+height: 100%;
+background-attachment: fixed;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
 } */
 
 

@@ -5,7 +5,7 @@ import { UserContext } from '../contexts/UserContext.js';
 // axiosWithAuth
 import { axiosWithAuth } from '../utils/AxiosWithAuth.js';
 // styles
-import './styles/Item.css';
+import './styles/UpdateItem.css';
 // components
 import Navigation from './Navigation.js';
 
@@ -76,38 +76,48 @@ const UpdateForm = () => {
     return (
         <div>
             <Navigation />
-            <div className="divide-container">
-                <form onSubmit={handleUpdate}>
-                    <label>Location:
-                        <input
-                        name="location"
-                        value={item.location || ''}
-                        onChange={handleChange}
-                        />
-                    </label>
-                    <label> Product Name:
-                        <input
-                        name="item"
-                        value={item.item || ''}
-                        onChange={handleChange}
-                        />
-                    </label>
-                    <label> Description:
-                        <input
-                        name="description"
-                        value={item.description || ''}
-                        onChange={handleChange}
-                        />
-                    </label>
-                    <label> Price: $
-                        <input
-                        name="price"
-                        value={item.price || ''}
-                        onChange={handleChange}
-                        />
-                    </label>
-                    <button type='submit'>Save Changes</button>
-                    <button onClick={backToDash}>Dashboard</button>
+            <div>
+                <form className="divide-container" onSubmit={handleUpdate}>
+                    <div className='box'>
+                        <label className="label">Location: </label>
+                            <input
+                            className="entry"
+                            name="location"
+                            value={item.location || ''}
+                            onChange={handleChange}
+                            />
+                    </div>
+                    <div className="box">
+                        <label className="label"> Name: </label>
+                            <input
+                            className="entry"
+                            name="item"
+                            value={item.item || ''}
+                            onChange={handleChange}
+                            />
+                    </div>
+                    <div className="box">
+                        <label className="label"> Description: </label>
+                            <input
+                            className="entry description"
+                            name="description"
+                            value={item.description || ''}
+                            onChange={handleChange}
+                            />
+                    </div>
+                    <div className="box">
+                        <label className="label"> Price: $  </label>
+                            <input
+                            className="entry"
+                            name="price"
+                            value={item.price || ''}
+                            onChange={handleChange}
+                            />
+                    </div>
+                    <div className="box buttons">
+                        <button type='submit'>Save Changes</button>
+                        <button onClick={backToDash}>Dashboard</button>
+                    </div>
                 </form>
             </div>
         </div>

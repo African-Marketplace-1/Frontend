@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 
 // Context
-import UserContext from '../contexts/UserContext.js';
+// import UserContext from '../contexts/UserContext.js';
 // axios
 import axios from 'axios'
 // Components
@@ -72,7 +72,7 @@ useEffect(() => {
                         </div>
                     </div>
                     <div className="left">
-                        <img className="image" src={undraw} />
+                        <img className="image" src={undraw} alt="man standing by buisness"/>
                     </div>
                 </div>
                 <section>

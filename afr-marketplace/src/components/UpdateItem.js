@@ -1,7 +1,7 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState,  useEffect } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 // contexts
-import { UserContext } from '../contexts/UserContext.js';
+// import { UserContext } from '../contexts/UserContext.js';
 // axiosWithAuth
 import { axiosWithAuth } from '../utils/AxiosWithAuth.js';
 // styles
@@ -98,7 +98,7 @@ const UpdateForm = () => {
                     </div>
                     <div className="box">
                         <label className="label"> Description: </label>
-                            <input
+                            <textarea
                             className="entry description"
                             name="description"
                             value={item.description || ''}

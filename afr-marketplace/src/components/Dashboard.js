@@ -1,10 +1,10 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 // axiosWithAuth
 import { axiosWithAuth } from '../utils/AxiosWithAuth.js';
-// Context
-import { UserContext } from '../contexts/UserContext.js';
+
 // styles
 import './styles/Dashboard.css';
+
 // components
 import Navigation from './Navigation.js';
 import NewItemForm from './NewItemForm.js';

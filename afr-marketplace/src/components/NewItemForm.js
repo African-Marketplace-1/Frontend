@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import { useHistory } from 'react-router-dom';
-import axios from 'axios';
 import { axiosWithAuth } from '../utils/AxiosWithAuth';
 
 
@@ -83,7 +82,7 @@ const SubmitListings = () => {
                     />
                 </label>
                 <label className="entry"> Description:
-                    <input
+                    <textarea
                     name="description"
                     value={listing.description}
                     onChange={handleChange}

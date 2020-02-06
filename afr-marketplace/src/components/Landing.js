@@ -48,6 +48,11 @@ useEffect(() => {
         setSearchTerm(event.target.value)
     }
 
+    const clearForm = (event) => {
+        event.preventDefault()
+        setSearchTerm("")
+    }
+
     return (
     <div>
 
@@ -72,9 +77,12 @@ useEffect(() => {
                 </div>
                 <section>
                     <h1 className="offering-header">Check Out Some Current Offerings</h1>
-                    <form>
-                    <label className="search-bar">Search: <input placeholder="Search for a product or user" value={searchTerm} onChange={handleChange} /> </label>
-                    </form>
+                    <div className="">
+                        <form className="form-contain">
+                            <input className="input" placeholder="Search for a product or user" value={searchTerm} onChange={handleChange} /> 
+                            <div className="clear-btn" onClick={clearForm}>Clear</div>
+                        </form>
+                    </div>
                     <div className="offering-div">
                         {
                             listings.length > 0 ?

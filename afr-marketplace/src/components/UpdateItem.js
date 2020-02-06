@@ -1,7 +1,7 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState,  useEffect } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 // contexts
-import { UserContext } from '../contexts/UserContext.js';
+// import { UserContext } from '../contexts/UserContext.js';
 // axiosWithAuth
 import { axiosWithAuth } from '../utils/AxiosWithAuth.js';
 // styles

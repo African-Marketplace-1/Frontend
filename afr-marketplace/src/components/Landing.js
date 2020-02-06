@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 
 // Context
-import UserContext from '../contexts/UserContext.js';
+// import UserContext from '../contexts/UserContext.js';
 // axios
 import axios from 'axios'
 // Components

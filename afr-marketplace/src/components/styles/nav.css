@@ -43,6 +43,7 @@ body {
 .nav h1 {
     font-family: 'Architects Daughter', cursive;
     margin-left: 50px;
+    margin-top: 7px;
     font-size: 4rem;
     display: flex;
     align-items: center;

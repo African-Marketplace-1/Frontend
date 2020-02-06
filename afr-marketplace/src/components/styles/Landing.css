@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css?family=Architects+Daughter|Roboto&display=swap');
+
+/* .landing-container {
+background-image: url('./images/background-image.jpg');
+height: 100%;
+background-attachment: fixed;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+} */
+
+
+.landing-header {
+    margin-top: 2.5%;
+    font-size: 4.5rem;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    font-family: 'Roboto', sans-serif;
+}
+
+.right {
+    width: 40%;
+    height: 40%;
+    margin-top: 5.5%;
+    border: 1px solid rgb(1,132,64);
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.right:hover {
+    box-shadow:  5px 5px cadetblue ;
+    background-color: honeydew;
+}
+
+.desc {
+    width: 100%;
+    font-size: 3rem;
+    color: black;
+    margin-bottom: 2.5%;
+}
+
+.landing-btn-div {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-top: 1%;
+}
+
+.btn {
+    width: 35%;
+    color: white;
+    background-color: rgb(228,27,35);
+    border-radius: 10px;
+    line-height: 2rem;
+    height: 40px;
+}
+
+.btn:hover {
+    box-shadow: 5px 10px #888888;
+    background-color: black;
+}
+
+.btn-right {
+    width: 35%;
+    color: white;
+    background-color: rgb(1,132,64); 
+    border-radius: 10px;
+    line-height: 2rem;
+    height: 40px;
+}
+
+.btn-right:hover {
+    box-shadow: 5px 10px #888888;
+    background-color: black;
+}
+
+.or {
+    width: 10%;
+    font-size: 2rem;
+}
+
+.left {
+    width: 40%;
+    height: 40%;
+}
+
+.image {
+    width: 80%;
+    height: 80%;
+}
+
+.offering-header {
+    margin-top: 2.5%;
+    font-size: 3rem;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.offering-div {
+    width: 100%;
+    margin-top: 2.5%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: baseline;
+}
+
+.offering-card {
+    width: 40%;
+    height: 40%;
+    margin-right: 2.5%;
+    margin-left: 2.5%;
+    margin-bottom: 1%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    border: 1px green solid;
+}
+
+.offering-seller {
+    margin-top: 2.5%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2rem;
+    color: green;
+}
+
+.offering-product {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.5rem;
+    color: green;
+}
+
+.offering-price {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2rem;
+    color:red;
+}
+
+.offering-location {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2rem;
+    color:red;
+}
+
+
+.offering-btn {
+    line-height: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    height: 5%;
+    background-color: red;
+    margin-bottom: 2.5%;
+    margin-top: 2.5%;
+}
+
+.item-view {
+    width: 100%;
+}
+
+.offering-card-view {
+    width: 80%;
+    height: 40%;
+    margin-right: 10%;
+    margin-left: 10%;
+    margin-bottom: 1%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    border: 1px green solid;
+}
+
+.offering-seller-view {
+    margin-top: 2.5%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 4rem;
+    color: green;
+}
+
+.offering-product-view {
+    font-family: 'Roboto', sans-serif;
+    font-size: 3rem;
+    color: green;
+}
+
+.offering-price-view {
+    font-family: 'Roboto', sans-serif;
+    font-size: 3.5rem;
+    color:red;
+}
+
+.offering-location-view {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.5rem;
+    color:red;
+}
+
+.offering-btn-view {
+    line-height: 2.6rem;
+    font-family: 'Roboto', sans-serif;
+    background-color: red;
+    margin-bottom: 2.5%;
+    margin-top: 2.5%;
+}
+
+.form-contain {
+    width: 80%;
+    margin-right: 10%;
+    margin-left: 10%;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.input {
+    width: 75%;
+}
+
+.clear-btn {
+    width: 25%;
+    border: 1px solid green;
+    border-radius: 20px;
+    color: white;
+    background-color: green;
+    font-size: 1.6rem;
+    margin-left: 1%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

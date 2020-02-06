@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css?family=Architects+Daughter|Roboto&display=swap');
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+.content {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    margin: 2%;
+}
+
+.content .itemsHeader {
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20rem;
+    
+}
+
+
+.form-container {
+    width: 35%;
+    border: 3px solid rgba(1,132,64);
+    border-radius: 20px;
+    margin-top: 2%;
+    margin-right: 2.5%;
+    padding: 2%;
+    font-family: 'Roboto', sans-serif;
+}
+
+button {
+    background-color:rgba(1,132,64);
+    font-family: 'Roboto', sans-serif;
+    font-size: 2rem;
+    color: white;
+    width: 75%;
+}
+
+button:hover {
+    background-color:rgba(228,27,35);
+    color: white;
+}
+
+.item-container-dash {
+    width: 50%;
+    margin-left: 2.5%;
+    margin-top: 2%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: baseline;
+    border: 3px solid rgba(1,132,64);
+    border-radius: 20px;
+    font-family: 'Roboto', sans-serif;
+    
+}
+
+.item-dash {
+    width: 40%;
+    height: 125px;
+    margin-right: 4%;
+    margin-left: 3%;
+    margin-top: 1.5%;
+    margin-bottom: 1.5%;
+    background-color: rgba(1,132,64);
+    color: white;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    padding: 1%;
+}
+
+.item-dash span {
+    font-weight: bold;
+    letter-spacing: 1px;
+
+}
+
+.item-dash h1{
+    font-size: 3.5rem;
+    font-family: 'Architects Daughter', cursive;
+    
+}
+
+
+
+.product-name{
+    margin-top: 1%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2rem;
+}
+
+.product-price {
+    margin-top: 1%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2rem;
+    color: white;
+}
+
+.product_category {
+    margin-top: 1%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+}
+
+.title {
+    font-size: 3rem;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+.entry {
+    display: block;
+    width: 95%;
+    margin: 2% auto;
+    box-sizing: border-box;
+    font-size: 2rem;
+}
+
+.description {
+    display: flex;
+    height: 20rem;
+    resize: none;
+       
+}
+
+.description input {
+    width: 100%;
+    clear: both;
+}
+
+
+.error {
+    color: red;
+    font-size: 1.6rem;
+}

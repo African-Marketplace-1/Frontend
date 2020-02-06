@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 // axios
 import axios from 'axios'
 // components
@@ -9,7 +9,7 @@ import "./styles/Landing.css";
 
 const ItemView = (props) => {
     const [item, setItem] = useState([])
-    let history = useHistory()
+    // let history = useHistory()
     let { id } = useParams()
 
     useEffect(() => {

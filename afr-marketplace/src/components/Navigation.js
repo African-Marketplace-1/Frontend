@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
 
 
@@ -24,7 +24,7 @@ const Navigation = (props) => {
                 <Link to='/Dashboard'>Home</Link>
             </div>
             <div>
-                <a herf="">About</a>
+                <a target="_blank" rel="noopener noreferrer" href="https://sautimarketplace202.netlify.com/ourteam.html">About</a>
             </div>
         </div>
 

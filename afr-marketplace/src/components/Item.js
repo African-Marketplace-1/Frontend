@@ -73,7 +73,7 @@ const updateItem = () => {
             <div className="indv-item-btn-div">
                         <button onClick={updateItem} className="btn-update hoverbutton">Update</button>
                         <button onClick={deleteItem} className="btn-delete hoverbutton">Delete</button>
-                        <button className="btn-back hoverbutton" onClick={backToDash}>Dashboard</button>
+                        <button className="btn-back hoverbutton" onClick={backToDash}>Listings</button>
                     </div>
         </div>
     )
